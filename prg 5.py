@@ -1,16 +1,23 @@
 # 5. Write a function inside another function.
 
 
-def fun1(x, y):
-    def fun2(a, b):
-        return a + b
-    
-    result = fun2(x, y)
-    return result * 2  
 
+def cal(x, y):
+   
+    def add():
+        return x + y
+    
+    def multi():
+        return x * y
+
+    return add(), multi()
 
 num1 = int(input("Enter first number: "))
 num2 = int(input("Enter second number: "))
 
-print("Final result:", fun1(num1, num2))
+addition, multiplication = cal(num1, num2)
+
+print("Addition result:", addition)
+print("Multiplication result:", multiplication)
+
 
